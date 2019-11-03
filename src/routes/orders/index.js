@@ -44,7 +44,7 @@ let _validatorListFilter = Joi.object({
 })
 
 router.post('/', validator.body(_validatorCreate), require('./controllers/create'))
-router.put('/:id', validator.body(_validatorUpdate), require('./controllers/update'))
+router.put('/', validator.body(_validatorUpdate), require('./controllers/update'))
 router.delete('/:id', validator.params(Joi.object({
     id: Joi.number().min(1).required()
 })), require('./controllers/remove'))
